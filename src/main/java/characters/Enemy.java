@@ -8,6 +8,8 @@ import items.Weapon;
 
 import java.util.ArrayList;
 
+import static items.Treasure.getRandomTreasure;
+
 public class Enemy extends Entity {
 
     private Weapon weapon;
@@ -15,6 +17,7 @@ public class Enemy extends Entity {
     public Enemy(String name, String type, int health, Weapon weapon) {
         super(name, type, health);
         this.weapon = weapon;
+        getTreasure(getRandomTreasure());
     }
 
     public Weapon getWeapon() {

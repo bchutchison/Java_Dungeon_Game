@@ -1,22 +1,25 @@
-package rooms;
+package quests;
 
 import characters.Enemy;
 
 import static items.Treasure.getRandomTreasure;
 
+
 public class Room {
 
-    private Room room;
-    private String name;
     private Enemy enemy;
+    private String name;
 
     public Room(String name){
         this.name = name;
+        this.enemy = enemy;
     }
 
-    public void generateEnemy(Enemy enemy){
-        enemy.getTreasure(getRandomTreasure());
+    public Enemy getEnemy() {
+        return enemy;
     }
 
-
+    public String getName() {
+        return name;
+    }
 }
