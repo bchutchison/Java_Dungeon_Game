@@ -24,7 +24,11 @@ public class RoomTest {
         assertEquals("Room of Doom", room.getName());
     }
 
-
+    @Test
+    public void roomHasEnemy() {
+        room.setEnemy(enemy);
+        assertEquals("Chris", room.getEnemy().getName());
+    }
 
 
 }

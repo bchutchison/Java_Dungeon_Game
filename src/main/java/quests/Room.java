@@ -19,6 +19,10 @@ public class Room {
         return enemy;
     }
 
+    public void setEnemy(Enemy enemy) {
+        this.enemy = enemy;
+    }
+
     public String getName() {
         return name;
     }

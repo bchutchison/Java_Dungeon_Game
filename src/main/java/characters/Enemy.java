@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import static items.Treasure.getRandomTreasure;
 
-public class Enemy extends Entity {
+public class Enemy extends Entity implements IAttack, IDefend {
 
     private Weapon weapon;
 

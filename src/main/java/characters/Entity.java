@@ -1,12 +1,10 @@
 package characters;
 
-import behaviours.IAttack;
-import behaviours.IDefend;
 import items.Treasure;
 
 import java.util.ArrayList;
 
-public abstract class Entity implements IDefend {
+public abstract class Entity{
 
     private String name;
     private String type;
@@ -53,3 +51,4 @@ public abstract class Entity implements IDefend {
     }
 
 }
+
