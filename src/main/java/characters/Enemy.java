@@ -3,7 +3,6 @@ package characters;
 
 import behaviours.IAttack;
 import behaviours.IDefend;
-import inventory.Inventory;
 import items.Weapon;
 
 import static items.Treasure.getRandomTreasure;

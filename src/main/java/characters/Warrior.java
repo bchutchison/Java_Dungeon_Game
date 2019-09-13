@@ -16,6 +16,8 @@ public class Warrior extends GameCharacter implements IAttack, IDefend {
         this.weapon = weapon;
     }
 
+
+    //ARMOUR ENUM
     public Armour getArmour() {
         return armour;
     }
@@ -24,13 +26,26 @@ public class Warrior extends GameCharacter implements IAttack, IDefend {
         return armour.getResistance();
     }
 
+    //setArmour to allow user to select armour for character
+    public void setArmour(Armour armour) {
+        this.armour = armour;
+    }
+
+
+    //WEAPON ENUM
     public Weapon getWeapon() {
         return weapon;
+    }
+
+    //setWeapon to allow user to select weapon for character
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
     }
 
     public int getWeaponDamage() {
         return weapon.getDamage();
     }
+
 
     public void defend(int attackPower){ //int damage
         int postArmourDamage = attackPower / armour.getResistance();
@@ -41,9 +56,6 @@ public class Warrior extends GameCharacter implements IAttack, IDefend {
         int attackPower = this.getWeaponDamage();
         defender.defend(attackPower);
     }
-
-    //setter for armour and weapon
-
 
 
 }
