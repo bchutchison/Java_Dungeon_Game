@@ -5,22 +5,33 @@ import java.util.ArrayList;
 public class Inventory {
 
     private Treasure treasure;
-    private ArrayList<Treasure> inventory;
+    private ArrayList<Treasure> treasures;
 
     public Inventory() {
-        this.inventory = new ArrayList<Treasure>();
+        this.treasures = new ArrayList<Treasure>();
+    }
+
+    public ArrayList<Treasure> getTreasures() {
+        return treasures;
     }
 
     public Treasure removeTreasure() {
-        return inventory.remove(0);
+        return treasures.remove(0);
     }
 
-    public void getTreasure(Treasure item){
-        inventory.add(item);
+    public void addTreasureToInventory(Treasure item){
+        treasures.add(item);
     }
 
     public int getTreasureCount(){
-        return inventory.size();
+        return treasures.size();
     }
 
+    public int getTotalTreasureValue() {
+        int total = 0;
+        for(items.Treasure i : getTreasures()) {
+            total += i.getWorth();
+        }
+        return total;
+    }
 }

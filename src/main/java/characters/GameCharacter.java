@@ -41,7 +41,7 @@ public abstract class GameCharacter {
     public void collectReward(GameCharacter enemy){
         if(enemy.getInventory().getTreasureCount() > 0) {
             Treasure treasure = enemy.getInventory().removeTreasure();
-            inventory.getTreasure(treasure);
+            inventory.addTreasureToInventory(treasure);
         }
     }
 

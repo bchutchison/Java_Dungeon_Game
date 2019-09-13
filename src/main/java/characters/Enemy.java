@@ -15,7 +15,7 @@ public class Enemy extends GameCharacter implements IAttack, IDefend {
     public Enemy(String name, String type, int health, Weapon weapon) {
         super(name, type, health);
         this.weapon = weapon;
-        getInventory().getTreasure(getRandomTreasure());
+        getInventory().addTreasureToInventory(getRandomTreasure());
     }
 
     public Weapon getWeapon() {

@@ -12,11 +12,13 @@ public class WarriorTest {
 
     Warrior warrior;
     Enemy enemy;
+    Enemy enemy2;
 
     @Before
     public void setUp() {
         warrior = new Warrior("Eve", "Dwarf", 400, Armour.HELMET, Weapon.CLUB);
         enemy = new Enemy("Ben", "Troll", 100, Weapon.CLUB);
+        enemy2 = new Enemy("Rich", "Troll", 100, Weapon.CLUB);
 
     }
 
@@ -69,15 +71,28 @@ public class WarriorTest {
 
     @Test
     public void canGetTreasure() {
-        warrior.getInventory().getTreasure(Treasure.RUBY);
+        warrior.getInventory().addTreasureToInventory(Treasure.RUBY);
         assertEquals(1, warrior.getInventory().getTreasureCount());
     }
 
     @Test
-    public void canCollectReward(){
-        enemy.getInventory().getTreasure(Treasure.RUBY);
+    public void canCollectReward() {
+        enemy.getInventory().addTreasureToInventory(Treasure.RUBY);
         warrior.collectReward(enemy);
         assertEquals(1, warrior.getInventory().getTreasureCount());
+    }
+
+//    @Test //generation of treasure is random so cant be tested without error
+//    public void canGetTotalTreasureValue() {
+//        warrior.collectReward(enemy);
+//        assertEquals(10, warrior.getInventory().getTotalTreasureValue());
+//    }
+
+    @Test
+    public void canCollectRewardsFromMultipleFoes() {
+        warrior.collectReward(enemy);
+        warrior.collectReward(enemy2);
+        assertEquals(2, warrior.getInventory().getTreasureCount());
     }
 
 
