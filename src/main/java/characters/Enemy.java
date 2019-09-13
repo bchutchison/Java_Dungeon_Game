@@ -3,21 +3,19 @@ package characters;
 
 import behaviours.IAttack;
 import behaviours.IDefend;
-import items.Treasure;
+import inventory.Inventory;
 import items.Weapon;
-
-import java.util.ArrayList;
 
 import static items.Treasure.getRandomTreasure;
 
-public class Enemy extends Entity implements IAttack, IDefend {
+public class Enemy extends GameCharacter implements IAttack, IDefend {
 
     private Weapon weapon;
 
     public Enemy(String name, String type, int health, Weapon weapon) {
         super(name, type, health);
         this.weapon = weapon;
-        getTreasure(getRandomTreasure());
+        getInventory().getTreasure(getRandomTreasure());
     }
 
     public Weapon getWeapon() {

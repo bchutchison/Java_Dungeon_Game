@@ -3,12 +3,9 @@ package characters;
 import behaviours.IAttack;
 import behaviours.IDefend;
 import items.Armour;
-import items.Treasure;
 import items.Weapon;
 
-import java.util.ArrayList;
-
-public class Warrior extends Entity implements IAttack, IDefend {
+public class Warrior extends GameCharacter implements IAttack, IDefend {
 
     private Armour armour;
     private Weapon weapon;
@@ -44,6 +41,8 @@ public class Warrior extends Entity implements IAttack, IDefend {
         int attackPower = this.getWeaponDamage();
         defender.defend(attackPower);
     }
+
+    //setter for armour and weapon
 
 
 

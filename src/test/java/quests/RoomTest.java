@@ -30,5 +30,11 @@ public class RoomTest {
         assertEquals("Chris", room.getEnemy().getName());
     }
 
+    @Test
+    public void roomEnemeyHasTreasure() {
+        room.setEnemy(enemy);
+        assertEquals(1, room.getEnemy().getInventory().getTreasureCount());
+    }
+
 
 }
