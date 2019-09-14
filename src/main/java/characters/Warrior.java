@@ -31,6 +31,7 @@ public class Warrior extends GameCharacter implements IAttack, IDefend {
         this.armour = armour;
     }
 
+
     //WEAPON ENUM
     public Weapon getWeapon() {
         return weapon;

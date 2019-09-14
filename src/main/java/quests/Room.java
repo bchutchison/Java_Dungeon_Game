@@ -1,18 +1,17 @@
 package quests;
 
 import characters.Enemy;
-
-import static items.Treasure.getRandomTreasure;
-
+import items.RoomNames;
 
 public class Room {
 
     private Enemy enemy;
-    private String name;
+    private RoomNames roomNames;
 
-    public Room(String name){
-        this.name = name;
+    public Room(){
+//        this.roomNames = roomNames;
         this.enemy = enemy;
+//        addRandomRoomName(roomNames.getRandomName());
     }
 
     public Enemy getEnemy() {
@@ -23,7 +22,11 @@ public class Room {
         this.enemy = enemy;
     }
 
-    public String getName() {
-        return name;
+    public void setRoomNames(RoomNames roomNames) {
+        this.roomNames = roomNames;
+    }
+
+    public void addRandomRoomName(RoomNames item) {
+        setRoomNames(item);
     }
 }

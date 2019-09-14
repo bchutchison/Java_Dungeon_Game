@@ -39,7 +39,7 @@ public class Enemy extends GameCharacter implements IAttack, IDefend {
     }
 
     public void defend(int attackPower){ //int damage
-        int postArmourDamage = attackPower;
+        int postArmourDamage = attackPower / armour.getResistance();
         this.takeDamage(postArmourDamage);
     }
 

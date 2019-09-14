@@ -2,6 +2,7 @@ package quests;
 
 import items.Armour;
 import characters.Enemy;
+import items.RoomNames;
 import items.Weapon;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,13 +16,8 @@ public class RoomTest {
 
     @Before
     public void setUp(){
-        room = new Room("Room of Doom");
+        room = new Room();
         enemy = new Enemy("Chris", "Goblin", 100, Armour.NONE, Weapon.CLUB);
-    }
-
-    @Test
-    public void roomHasName() {
-        assertEquals("Room of Doom", room.getName());
     }
 
     @Test
