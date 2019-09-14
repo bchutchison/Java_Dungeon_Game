@@ -22,7 +22,7 @@ public enum Treasure {
         return worth;
      }
 
-     public static Treasure getRandomTreasure(){
+     public static Treasure getRandomTreasure() {
         return VALUES[RANDOM.nextInt(SIZE)];
      }
 

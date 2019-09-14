@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import static items.Weapon.CLUB;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class EnemyTest {
 
@@ -35,31 +36,32 @@ public class EnemyTest {
         assertEquals(100, enemy.getHealth());
     }
 
-    @Test
-    public void hasWeapon() {
-        assertEquals(CLUB, enemy.getWeapon());
-    }
+//    @Test //random weapon generated. Test void.
+//    public void hasWeapon() {
+//        assertEquals(CLUB, enemy.getWeapon());
+//    }
 
-    @Test
-    public void hasWeaponDamage() {
-        assertEquals(40, enemy.getWeaponDamage());
-    }
+//    @Test //random weapon generated. Test void.
+//    public void hasWeaponDamage() {
+//        assertEquals(40, enemy.getWeaponDamage());
+//    }
 
     @Test
     public void canDefend() {
         enemy.defend(40);
-        assertEquals(60, enemy.getHealth()); // make sure enemy attack goes down
+        assertEquals( 60 , enemy.getHealth()); // make sure enemy attack goes down
     }
 
     @Test
     public void canAttack() {
         enemy.attack(warrior);
-        assertEquals(40, warrior.getWeaponDamage()); // make sure warrior health goes down
+        assertNotEquals(400, warrior.getHealth()); // make sure warrior health goes down
     }
 
     @Test
     public void canGetRandomArmour() {
-        assertEquals( CLUB, enemy.getWeapon());
+
+//        assertEquals( CLUB, enemy.getWeapon());
     }
 
 

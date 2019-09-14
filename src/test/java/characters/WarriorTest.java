@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class WarriorTest {
 
@@ -54,7 +55,7 @@ public class WarriorTest {
 
     @Test
     public void hasWeaponDamage() {
-        assertEquals(40, warrior.getWeaponDamage());
+        assertEquals(110, warrior.getWeaponDamage());
     }
 
     @Test
@@ -66,7 +67,7 @@ public class WarriorTest {
     @Test
     public void canAttack() {
         warrior.attack(enemy);
-        assertEquals(40, enemy.getWeaponDamage()); // make sure warrior health goes down
+        assertNotEquals(100, enemy.getHealth()); // make sure warrior health goes down
     }
 
     @Test

@@ -4,9 +4,9 @@ import java.util.Random;
 
 public enum Weapon {
 
-    SWORD(20),
-    AXE(25),
-    CLUB(40);
+    SWORD(50),
+    AXE(80),
+    CLUB(110);
 
     private final int damage;
 
@@ -26,7 +26,4 @@ public enum Weapon {
         return VALUES[RANDOM.nextInt(SIZE)];
     }
 
-    //random weapon generation on creation of enemy
-    public void addRandomWeapon() {
-    }
 }
