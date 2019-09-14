@@ -5,6 +5,8 @@ import behaviours.IAttack;
 import behaviours.IDefend;
 import items.Weapon;
 
+import java.util.Random;
+
 import static items.Treasure.getRandomTreasure;
 
 public class Enemy extends GameCharacter implements IAttack, IDefend {
@@ -15,6 +17,7 @@ public class Enemy extends GameCharacter implements IAttack, IDefend {
         super(name, type, health);
         this.weapon = weapon;
         getInventory().addTreasureToInventory(getRandomTreasure());
+        getWeapon().addRandomWeapon();
     }
 
     public Weapon getWeapon() {
@@ -34,5 +37,16 @@ public class Enemy extends GameCharacter implements IAttack, IDefend {
         int attackPower = this.getWeaponDamage();
         defender.defend(attackPower);
     }
+
+
+
+    //Tested and works
+    public int createRandomNumber() {
+        Random num = new Random();
+        int answer = num.nextInt(10) +1;
+        return answer;
+    }
+
+
 
 }

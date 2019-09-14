@@ -25,4 +25,8 @@ public enum Weapon {
     public static Weapon getRandomWeapon() {
         return VALUES[RANDOM.nextInt(SIZE)];
     }
+
+    //random weapon generation on creation of enemy
+    public void addRandomWeapon() {
+    }
 }
