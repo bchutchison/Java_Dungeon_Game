@@ -6,7 +6,8 @@ public enum Armour {
 
     HELMET(3),
     CUIRASS(4),
-    GAUNTLETS(2);
+    GAUNTLETS(2),
+    NONE(1);
 
     private final int resistance;
 

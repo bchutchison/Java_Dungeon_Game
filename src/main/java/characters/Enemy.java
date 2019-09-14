@@ -3,26 +3,35 @@ package characters;
 
 import behaviours.IAttack;
 import behaviours.IDefend;
+import items.Armour;
 import items.Weapon;
 
 import java.util.Random;
 
+import static items.Armour.getRandomArmour;
 import static items.Treasure.getRandomTreasure;
 import static items.Weapon.getRandomWeapon;
 
 public class Enemy extends GameCharacter implements IAttack, IDefend {
 
     private Weapon weapon;
+    private Armour armour;
 
-    public Enemy(String name, String type, int health, Weapon weapon) {
+    public Enemy(String name, String type, int health, Armour armour, Weapon weapon) {
         super(name, type, health);
         this.weapon = weapon;
+        this.armour = armour;
         getInventory().addTreasureToInventory(getRandomTreasure());
         addRandomWeapon(getRandomWeapon());
+        addRandomArmour(getRandomArmour());
     }
 
     public Weapon getWeapon() {
         return weapon;
+    }
+
+    public Armour getArmour() {
+        return armour;
     }
 
     public int getWeaponDamage() {
@@ -39,17 +48,25 @@ public class Enemy extends GameCharacter implements IAttack, IDefend {
         defender.defend(attackPower);
     }
 
-
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
     }
 
-    //Verified
+    public void setArmour(Armour armour) {
+        this.armour = armour;
+    }
+
+    //Verified function
     public void addRandomWeapon(Weapon item) {
         setWeapon(item);
     }
 
-    //Verified
+    //Verified function
+    public void addRandomArmour(Armour item) {
+        setArmour(item);
+    }
+
+    //Verified function
     public int createRandomNumber() {
         Random num = new Random();
         int answer = num.nextInt(10) +1;

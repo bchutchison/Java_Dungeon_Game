@@ -18,8 +18,8 @@ public class WarriorTest {
     @Before
     public void setUp() {
         warrior = new Warrior("Eve", "Dwarf", 400, Armour.HELMET, Weapon.CLUB);
-        enemy = new Enemy("Ben", "Troll", 100, Weapon.CLUB);
-        enemy2 = new Enemy("Rich", "Troll", 100, Weapon.CLUB);
+        enemy = new Enemy("Ben", "Troll", 100, Armour.NONE, Weapon.CLUB);
+        enemy2 = new Enemy("Rich", "Troll", 100, Armour.NONE, Weapon.CLUB);
 
     }
 

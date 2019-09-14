@@ -6,6 +6,7 @@ import items.Weapon;
 import org.junit.Before;
 import org.junit.Test;
 
+import static items.Armour.NONE;
 import static items.Weapon.CLUB;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -17,7 +18,7 @@ public class EnemyTest {
 
     @Before
     public void setUp() {
-        enemy = new Enemy("Ben", "Troll", 100, CLUB);
+        enemy = new Enemy("Ben", "Troll", 100, NONE, CLUB);
         warrior = new Warrior("Eve", "Dwarf", 400, Armour.HELMET, CLUB);
     }
 
@@ -56,12 +57,6 @@ public class EnemyTest {
     public void canAttack() {
         enemy.attack(warrior);
         assertNotEquals(400, warrior.getHealth()); // make sure warrior health goes down
-    }
-
-    @Test
-    public void canGetRandomArmour() {
-
-//        assertEquals( CLUB, enemy.getWeapon());
     }
 
 

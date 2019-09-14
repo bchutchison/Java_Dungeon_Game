@@ -16,7 +16,7 @@ public class RoomTest {
     @Before
     public void setUp(){
         room = new Room("Room of Doom");
-        enemy = new Enemy("Chris", "Goblin", 100, Weapon.CLUB);
+        enemy = new Enemy("Chris", "Goblin", 100, Armour.NONE, Weapon.CLUB);
     }
 
     @Test
