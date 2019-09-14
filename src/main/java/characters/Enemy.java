@@ -66,12 +66,7 @@ public class Enemy extends GameCharacter implements IAttack, IDefend {
         setArmour(item);
     }
 
-    //Verified function
-    public int createRandomNumber() {
-        Random num = new Random();
-        int answer = num.nextInt(10) +1;
-        return answer;
-    }
+
 
 
 

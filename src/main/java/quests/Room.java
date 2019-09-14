@@ -9,8 +9,8 @@ public class Room {
     private RoomNames roomNames;
 
     public Room(){
-//        this.roomNames = roomNames;
         this.enemy = enemy;
+//        this.roomNames = roomNames;
 //        addRandomRoomName(roomNames.getRandomName());
     }
 
@@ -26,7 +26,4 @@ public class Room {
         this.roomNames = roomNames;
     }
 
-    public void addRandomRoomName(RoomNames item) {
-        setRoomNames(item);
-    }
 }

@@ -16,7 +16,7 @@ public class QuestTest {
 
     @Before
     public void setUp() {
-        quest = new Quest(4);
+        quest = new Quest();
         room = new Room();
         enemy = new Enemy("Chris", "Goblin", 100, Armour.NONE, Weapon.CLUB);
     }
@@ -27,10 +27,18 @@ public class QuestTest {
         assertEquals(0, quest.questCount());
     }
 
-
     @Test
     public void hasArrayListOfQuests() {
-
+        quest.start(4);
+        assertEquals(4, quest.questCount());
     }
+
+    @Test
+    public void hasRandomEnemyInEachRoom() {
+        quest.start(3);
+        assertEquals(3, quest.questCount());
+        assertEquals("Enemy1", quest.getQuests().get(0).getEnemy().getName());
+    }
+
 
 }
