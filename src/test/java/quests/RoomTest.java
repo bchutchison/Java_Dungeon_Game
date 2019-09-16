@@ -2,7 +2,6 @@ package quests;
 
 import items.Armour;
 import characters.Enemy;
-import items.RoomNames;
 import items.Weapon;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,7 +26,7 @@ public class RoomTest {
     }
 
     @Test
-    public void roomEnemeyHasTreasure() {
+    public void roomEnemyHasTreasure() {
         room.setEnemy(enemy);
         assertEquals(1, room.getEnemy().getInventory().getTreasureCount());
     }

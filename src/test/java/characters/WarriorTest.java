@@ -12,14 +12,18 @@ import static org.junit.Assert.assertNotEquals;
 public class WarriorTest {
 
     Warrior warrior;
+    Warrior warriorLowHealth;
     Enemy enemy;
     Enemy enemy2;
+    Enemy enemyLowHealth;
 
     @Before
     public void setUp() {
         warrior = new Warrior("Eve", "Dwarf", 400, Armour.HELMET, Weapon.CLUB);
+        warriorLowHealth = new Warrior("Eve", "Dwarf", 5, Armour.HELMET, Weapon.CLUB);
         enemy = new Enemy("Ben", "Troll", 100, Armour.NONE, Weapon.CLUB);
         enemy2 = new Enemy("Rich", "Troll", 100, Armour.NONE, Weapon.CLUB);
+        enemyLowHealth = new Enemy("Rich", "Troll", 1, Armour.NONE, Weapon.CLUB);
 
     }
 
@@ -94,6 +98,20 @@ public class WarriorTest {
         warrior.collectReward(enemy);
         warrior.collectReward(enemy2);
         assertEquals(2, warrior.getInventory().getTreasureCount());
+    }
+
+    @Test
+    public void canCheckHealth() {
+        enemy.attack(warriorLowHealth);
+        enemy.attack(warriorLowHealth);
+        assertEquals(false, warrior.checkHealth(warriorLowHealth));
+    }
+
+    @Test
+    public void canDefeatEnemyAndCollectReward() {
+        warrior.battle(enemy, warrior);
+        warrior.battle(enemy, warrior);
+        assertEquals(1, warrior.getInventory().getTreasureCount());
     }
 
 

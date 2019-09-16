@@ -47,7 +47,7 @@ public class Warrior extends GameCharacter implements IAttack, IDefend {
     }
 
 
-    public void defend(int attackPower){ //int damage
+    public void defend(int attackPower) { //int damage
         int postArmourDamage = attackPower / armour.getResistance();
         this.takeDamage(postArmourDamage);
     }
@@ -58,4 +58,16 @@ public class Warrior extends GameCharacter implements IAttack, IDefend {
     }
 
 
-}
+//    Test how to use a while loop to exchange attacks until one person is dead??
+    public void battle(Enemy enemy, Warrior warrior) {
+            if(enemy.checkHealth(enemy)) {
+                attack(enemy);
+                if (!enemy.checkHealth(enemy)) {
+                    collectReward(enemy);
+                }
+                enemy.battle(warrior, enemy);
+            }
+        }
+    }
+
+

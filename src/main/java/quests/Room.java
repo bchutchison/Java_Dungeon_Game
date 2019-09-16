@@ -1,12 +1,13 @@
 package quests;
 
+import behaviours.IAttack;
 import characters.Enemy;
-import items.RoomNames;
+import items.RoomData;
 
 public class Room {
 
     private Enemy enemy;
-    private RoomNames roomNames;
+    private RoomData roomNames;
 
     public Room(){
         this.enemy = enemy;
@@ -22,8 +23,11 @@ public class Room {
         this.enemy = enemy;
     }
 
-    public void setRoomNames(RoomNames roomNames) {
+    public void setRoomNames(RoomData roomNames) {
         this.roomNames = roomNames;
     }
+
+
+
 
 }

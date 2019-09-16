@@ -66,9 +66,28 @@ public class Enemy extends GameCharacter implements IAttack, IDefend {
         setArmour(item);
     }
 
+    public boolean checkHealth(GameCharacter enemy) {
+        if (enemy.getHealth() > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public String endGame() {
+       return "Game Over!";
+    }
+
+    public void battle(Warrior warrior, Enemy enemy) {
+            if (warrior.checkHealth(warrior)) {
+                attack(warrior);
+                if (!warrior.checkHealth(warrior)) {
+                    endGame();
+                }
+                warrior.battle(enemy, warrior);
+            }
+
+        }
+    }
 
 
 
-
-
-}

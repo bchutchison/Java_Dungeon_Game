@@ -17,6 +17,17 @@ public abstract class GameCharacter {
         this.inventory = new Inventory();
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
 
     public String getName() {
         return name;
@@ -43,6 +54,13 @@ public abstract class GameCharacter {
             Treasure treasure = enemy.getInventory().removeTreasure();
             inventory.addTreasureToInventory(treasure);
         }
+    }
+
+    public boolean checkHealth(GameCharacter character) {
+        if (character.getHealth() > 0) {
+            return true;
+        }
+        return false;
     }
 
 
